@@ -1,0 +1,2 @@
+# This file ensures the DataBase folder is tracked by git, even if empty.
+# Remove this file if you add real database files to this directory.

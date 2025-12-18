@@ -25,6 +25,15 @@ namespace MadLab.QuickMVPWithEF.Controllers
             return Ok(items);
         }
 
+        [HttpGet("by-todolist")]
+        public async Task<ActionResult<IEnumerable<TodoItem>>> GetByTodoListId([FromQuery] int todoListId)
+        {
+            var items = await IncludeNavigation(_dbSet)
+                .Where(i => i.TodoListId == todoListId)
+                .ToListAsync();
+
+            return Ok(items);
+        }
 
     }
 }
